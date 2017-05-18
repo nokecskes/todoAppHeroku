@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Todo App</title>
+  <meta charset="UTF-8"/>
+  <link rel="stylesheet" th:href="@{/style.css}"/>
+</head>
+<body>
+<h1 th:text="'TODOS FOR TODAY:'"></h1>
+
+<table>
+  <tr>
+    <th th:text="ID"></th>
+    <th th:text="ACTION"></th>
+    <th th:text="DONE"></th>
+    <th th:text="URGENT"></th>
+  </tr>
+  <tr th:each="todo : ${todos}">
+    <td th:text="${todo.getId()}"></td>
+    <td th:text="${todo.getTitle()}"></td>
+    <td th:text="${todo.isDone()}"></td>
+    <td th:text="${todo.isUrgent()}"></td>
+  </tr>
+</table>
+</body>
+</html>
+

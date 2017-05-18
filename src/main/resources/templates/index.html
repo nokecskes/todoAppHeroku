@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Todo App</title>
+  <meta charset="UTF-8"/>
+  <link rel="stylesheet" th:href="@{/style.css}"/>
+</head>
+<body>
+<h1 th:text="'Welcome to the todo app!'"></h1>
+<h2 th:text="You can "></h2>
+<ul>
+  <li><a th:href="@{/add}" th:text="'add new todo'"></a></li>
+  <li><a th:href="@{/add}" th:text="'check your todos'"></a></li>
+  <li><a th:href="@{/add}" th:text="'list all todos'"></a></li>
+</ul>
+</body>
+</html>
+
