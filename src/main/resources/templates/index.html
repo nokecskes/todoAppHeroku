@@ -7,11 +7,30 @@
 </head>
 <body>
 <h1 th:text="'Welcome to the todo app!'"></h1>
-<h2 th:text="You can "></h2>
+<h2 th:text="'You can'"></h2>
 <ul>
   <li><a th:href="@{/add}" th:text="'add new todo'"></a></li>
-  <li><a th:href="@{/add}" th:text="'check your todos'"></a></li>
-  <li><a th:href="@{/add}" th:text="'list all todos'"></a></li>
+  <li><a th:href="@{/list}" th:text="'list all todos'"></a></li>
+  <li>
+    <form action="/checkTodos">
+      <label>check todos that are: </label>
+      <select name="filterBy">
+        <option th:text="'not done'"></option>
+        <option th:text="urgent"></option>
+      </select>
+      <input type="submit" value="Check"/>
+    </form>
+  </li><li>
+    <form action="/checkPersonalTodos">
+      <label>check your own todos: </label>
+      <select name="userName">
+        <option th:each="username : ${usernames}"
+                th:value="${username}"
+                th:text="${username}"></option>
+      </select>
+      <input type="submit" value="Check"/>
+    </form>
+  </li>
 </ul>
 </body>
 </html>

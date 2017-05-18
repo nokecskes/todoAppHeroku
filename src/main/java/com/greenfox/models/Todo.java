@@ -20,27 +20,29 @@ public class Todo {
   Long id;
 
   String title;
+  String name;
   boolean isUrgent;
   boolean isDone;
 
   public Todo() {
   }
 
-  public Todo(String title) {
+  public Todo(String title, String name) {
     this.title = title;
     isUrgent = false;
     isDone = false;
   }
 
-  public Todo(String title, boolean isUrgent, boolean isDone) {
+  public Todo(String title, String name, boolean isUrgent, boolean isDone) {
     this.title = title;
+    this.name = name;
     this.isUrgent = isUrgent;
     this.isDone = isDone;
   }
 
   @Override
   public String toString() {
-    return String.format("Todo{ id: %f, title: %s, isUrgent: %b, isDone %b", id, title, isUrgent,
+    return String.format("Todo{ id: %f, name %s, title: %s, isUrgent: %b, isDone %b", id, name, title, isUrgent,
             isDone);
   }
 }

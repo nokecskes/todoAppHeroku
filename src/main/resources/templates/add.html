@@ -8,8 +8,9 @@
 <body>
 <h1 th:text="'Add new Todo'"></h1>
 <!--/*@thymesVar id="todo" type="com.greenfox.model.Todo"*/-->
-<form action="/todo/adding" method="post" th:object="${todo}">
-  <input type="text" th:field = "*{title}"/>
+<form action="/adding" method="post" th:object="${todo}">
+  Your name: <input type="text" th:field = "*{name}"/>
+  The todo: <input type="text" th:field = "*{title}"/>
   <input type="submit" value="Submit"/>
 </form>
 </body>
